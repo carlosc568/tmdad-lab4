@@ -95,7 +95,7 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
    
  4. Crear contenedor de RabbitMQ
  
-    Para crear el contenedor de RabbitMQ se ha usado el siguiente [enlace](https://github.com/jharting/openshift-rabbitmq- cluster)
+    Para crear el contenedor de RabbitMQ se ha usado el siguiente [enlace](https://github.com/jharting/openshift-rabbitmq-cluster.git)
     Descargar el archivo .yaml del enlace anterior y ejecutar el siguiente comando con oc:
     ```
     $ ./oc process -f rabbitmq-cluster-template.yaml NAMESPACE="$(./oc project --short)" | ./oc create -f -
@@ -115,7 +115,7 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
  
  5. Crear contenedor para la práctica 3.
  
-    Al igual que con la práctica 0, hay que modificar el archivo gradle.bat de la misma manera (gradle-lab3.bat).
+    Al igual que con la práctica 0, hay que modificar el archivo [gradle.bat](https://github.com/carlosc568/tmdad-lab4/blob/master/gradle-lab3.bat) de la misma manera.
     También hay que cambiar las credenciales del servidor RabbitMQ por las del creado anteriormente.
 
     Ejecutar los mismos comandos que para la práctica 0, pero con el nombre del proyecto creado en local.
