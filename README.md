@@ -93,20 +93,20 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
    
  4. Crear contenedor de RabbitMQ
  
-    Para crear el contenedor de RabbitMQ se ha usado el siguiente [enlace](https://github.com/jharting/openshift-rabbitmq-cluster)
+    Para crear el contenedor de RabbitMQ se ha usado el siguiente [enlace](https://github.com/jharting/openshift-rabbitmq- cluster)
     Descargar el archivo .yaml del enlace anterior y ejecutar el siguiente comando con oc:
-   ```
-   $ ./oc process -f rabbitmq-cluster-template.yaml NAMESPACE="$(./oc project --short)" | ./oc create -f -
-   ```
-   Una vez completado el deployment, exponerlo:
-   
-   ```
-   $ ./oc expose svc rabbitmq-cluster
-   
-   $ ./oc get routes
-   NAME               HOST/PORT                                     PATH      SERVICES           PORT      TERMINATION   WILDCARD
-   rabbitmq-cluster   rabbitmq-cluster-myproject.127.0.0.1.nip.io             rabbitmq-cluster   amqp                    None
-   ```
+    ```
+    $ ./oc process -f rabbitmq-cluster-template.yaml NAMESPACE="$(./oc project --short)" | ./oc create -f -
+    ```
+    Una vez completado el deployment, exponerlo:
+
+    ```
+    $ ./oc expose svc rabbitmq-cluster
+
+    $ ./oc get routes
+    NAME               HOST/PORT                                     PATH      SERVICES           PORT      TERMINATION   WILDCARD
+    rabbitmq-cluster   rabbitmq-cluster-myproject.127.0.0.1.nip.io             rabbitmq-cluster   amqp                    None
+      ```
  
  5. Crear contenedor para la práctica 3.
  
