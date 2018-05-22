@@ -125,3 +125,4 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
     rabbitmq-cluster   rabbitmq-cluster-myproject.127.0.0.1.nip.io             rabbitmq-cluster   amqp                     None
 
     ```
+    El despliege de la práctica 3 se encuentra en el siguiente enlace: http://lab3-myproject.127.0.0.1.nip.io/lab3-twitter-rabbitmqq-2018/
