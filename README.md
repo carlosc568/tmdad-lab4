@@ -140,7 +140,7 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
     
     ![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/images/error.png)
     
-    Al encontrar este error no se prosiguió a configurar el cluster de rabbitmq para conectarlo con el contenedor creado.
+    Al encontrar este error y no poder solucionarlo no se ha proseguido a configurar el cluster de rabbitmq para conectarlo con el contenedor creado.
     
     ## TODO:
     * Fix Web Socket problem
