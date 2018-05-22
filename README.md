@@ -51,4 +51,8 @@ Pasos a realizar:
    ```
 Una vez desplegado, la práctica 0 ya estará disponible en el siguiente enlace: http://lab0-tmdad-lab4.193b.starter-ca-central-1.openshiftapps.com/lab0-twitter-resst-2018/
 
+
+![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/lab02.PNG)
+
+
 ![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/lab0.PNG)
