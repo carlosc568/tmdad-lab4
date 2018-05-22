@@ -136,7 +136,7 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
     
     El despliege de la práctica 3 se encuentra en el siguiente enlace: http://lab3-myproject.127.0.0.1.nip.io/lab3-twitter-rabbitmqq-2018/
     
-    A la hora de comprobar si la aplicación funcionaba, se encontró un problema a la hora de conectarse mediante Web Socket en el que no se conseguiá establecer la conexión y nada más abrir la aplicación, fallaba al conectar.
+    A la hora de comprobar si la aplicación funcionaba, se encontró un problema a la hora de conectarse mediante Web Socket en el que no se conseguía establecer la conexión y nada más abrir la aplicación, fallaba al conectar.
     
     ![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/images/error.png)
     
