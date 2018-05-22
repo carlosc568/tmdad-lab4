@@ -40,7 +40,7 @@ Pasos a realizar:
 6. Crear una ruta para la aplicación desplegada:
 
    ```
-   $C:\> oc expose svc mysample
+   $C:\> oc expose svc lab0
    ```
   
    ```
@@ -80,24 +80,33 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
    
    Con este comando, se crea un cluster local de openshift. Se puede acceder a la GUI con la siguiente URL por defecto una vez            iniciado:
    https://localhost:8443.
-   Se puede comprobar que se crea un proyecto llamado openshift, el cual no tiene ningún tipo de limitaciones y con el que se puede        empezar a trabajar
+   Se puede comprobar que se crea un proyecto llamado "myproject", el cual no tiene ningún tipo de limitaciones y con el que se puede        empezar a trabajar
  
    Para conectarse, los credenciales por defecto son:
-      +Servidor: https://localhost:8443
-      +Username: developer
-      +Password: (cualquier valor)
+      * Servidor: https://localhost:8443
+      * Username: developer
+      * Password: (cualquier valor)
    
    ```
-   $ oc login
+   $ ./oc login
    ```
    
  4. Crear contenedor de RabbitMQ
  
     Para crear el contenedor de RabbitMQ se ha usado el siguiente [enlace](https://github.com/jharting/openshift-rabbitmq-cluster)
     Descargar el archivo .yaml del enlace anterior y ejecutar el siguiente comando con oc:
-      ```
-      $ oc process -f rabbitmq-cluster-template.yaml NAMESPACE="$(oc project --short)" | oc create -f -
-      ```
+   ```
+   $ ./oc process -f rabbitmq-cluster-template.yaml NAMESPACE="$(./oc project --short)" | ./oc create -f -
+   ```
+   Una vez completado el deployment, exponerlo:
+   
+   ```
+   $ ./oc expose svc rabbitmq-cluster
+   
+   $ ./oc get routes
+   NAME               HOST/PORT                                     PATH      SERVICES           PORT      TERMINATION   WILDCARD
+   rabbitmq-cluster   rabbitmq-cluster-myproject.127.0.0.1.nip.io             rabbitmq-cluster   amqp                    None
+   ```
  
  5. Crear contenedor para la práctica 3.
  
@@ -106,3 +115,13 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
 
     Ejecutar los mismos comandos que para la práctica 0, pero con el nombre del proyecto creado en local.
  
+    ```
+    $ ./oc new-app wildfly:latest~. --name lab3
+    $ ./oc start-build lab3 --from-file=lab3-twitter-rabbitmqq-2018.war
+    $ ./oc expose svc lab3
+    $ ./oc get routes
+    NAME               HOST/PORT                                     PATH      SERVICES           PORT       TERMINATION  WILDCARD
+    lab3               lab3-myproject.127.0.0.1.nip.io                         lab3               8080-tcp                 None
+    rabbitmq-cluster   rabbitmq-cluster-myproject.127.0.0.1.nip.io             rabbitmq-cluster   amqp                     None
+
+    ```
