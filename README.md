@@ -67,15 +67,18 @@ Pasos a seguir:
 1. Instalar y configurar Docker.
 Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#linux) proporcionado en el guión de la práctica.
 
+
 2. Instalar de nuevo el binario oc en [openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz](https://github.com/openshift/origin/releases)
 
 3. Crear cluster local
 
+   Desde el directorio donde esté el binario oc descargado ejecutar
+   
    ```
-   $ oc cluster up
+   $ ./oc cluster up
    ```
    
-   Con este comando, se crea un cluster local de openshift. Se puede acceder a la GUI con la siguiente URL por defecto una vez iniciado:
+   Con este comando, se crea un cluster local de openshift. Se puede acceder a la GUI con la siguiente URL por defecto una vez            iniciado:
    https://localhost:8443.
    Se puede comprobar que se crea un proyecto llamado openshift, el cual no tiene ningún tipo de limitaciones y con el que se puede        empezar a trabajar
  
