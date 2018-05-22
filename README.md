@@ -56,3 +56,50 @@ Una vez desplegado, la práctica 0 ya estará disponible en el siguiente enlace:
 
 
 ![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/lab0.PNG)
+
+
+## Desplegar práctica 3 en cluster local
+
+Para esta segunda parte se ha usado Linux.
+
+Pasos a seguir:
+
+1. Instalar y configurar Docker.
+Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https://github.com/openshift/origin/blob/master/docs/cluster_up_down.md#linux) proporcionado en el guión de la práctica.
+
+2. Instalar de nuevo el binario oc en [openshift-origin-client-tools-v3.9.0-191fece-linux-64bit.tar.gz](https://github.com/openshift/origin/releases)
+
+3. Crear cluster local
+
+   ```
+   $ oc cluster up
+   ```
+   
+   Con este comando, se crea un cluster local de openshift. Se puede acceder a la GUI con la siguiente URL por defecto una vez iniciado:
+   https://localhost:8443.
+   Se puede comprobar que se crea un proyecto llamado openshift, el cual no tiene ningún tipo de limitaciones y con el que se puede        empezar a trabajar
+ 
+   Para conectarse, los credenciales por defecto son:
+      +Servidor: https://localhost:8443
+      +Username: developer
+      +Password: (cualquier valor)
+   
+   ```
+   $ oc login
+   ```
+   
+ 4. Crear contenedor de RabbitMQ
+ 
+    Para crear el contenedor de RabbitMQ se ha usado el siguiente [enlace](https://github.com/jharting/openshift-rabbitmq-cluster)
+    Descargar el archivo .yaml del enlace anterior y ejecutar el siguiente comando con oc:
+      ```
+      $ oc process -f rabbitmq-cluster-template.yaml NAMESPACE="$(oc project --short)" | oc create -f -
+      ```
+ 
+ 5. Crear contenedor para la práctica 3.
+ 
+    Al igual que con la práctica 0, hay que modificar el archivo gradle.bat de la misma manera (gradle-lab3.bat).
+    También hay que cambiar las credenciales del servidor RabbitMQ por las del creado anteriormente.
+
+    Ejecutar los mismos comandos que para la práctica 0, pero con el nombre del proyecto creado en local.
+ 
