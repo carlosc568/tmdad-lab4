@@ -52,10 +52,10 @@ Pasos a realizar:
 Una vez desplegado, la práctica 0 ya estará disponible en el siguiente enlace: http://lab0-tmdad-lab4.193b.starter-ca-central-1.openshiftapps.com/lab0-twitter-resst-2018/
 
 
-![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/lab02.PNG)
+![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/images/lab02.PNG)
 
 
-![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/lab0.PNG)
+![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/images/lab0.PNG)
 
 
 ## Desplegar práctica 3 en cluster local
@@ -81,7 +81,9 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
    Con este comando, se crea un cluster local de openshift. Se puede acceder a la GUI con la siguiente URL por defecto una vez            iniciado:
    https://localhost:8443.
    Se puede comprobar que se crea un proyecto llamado "myproject", el cual no tiene ningún tipo de limitaciones y con el que se puede        empezar a trabajar
- 
+   
+   ![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/images/my%20project.png)
+   
    Para conectarse, los credenciales por defecto son:
       * Servidor: https://localhost:8443
       * Username: developer
@@ -107,6 +109,9 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
     NAME               HOST/PORT                                     PATH      SERVICES           PORT      TERMINATION   WILDCARD
     rabbitmq-cluster   rabbitmq-cluster-myproject.127.0.0.1.nip.io             rabbitmq-cluster   amqp                    None
       ```
+    Desde la GUI de Openshift se pueden editar las variables de entorno
+    
+    ![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/images/rabbitmq-env.PNG)
  
  5. Crear contenedor para la práctica 3.
  
@@ -125,4 +130,19 @@ Se han seguido los pasos del apartado 2 de la sección Linux del [enlace](https:
     rabbitmq-cluster   rabbitmq-cluster-myproject.127.0.0.1.nip.io             rabbitmq-cluster   amqp                     None
 
     ```
+    
+    ![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/images/lab3-clusters.PNG)
+    
+    
     El despliege de la práctica 3 se encuentra en el siguiente enlace: http://lab3-myproject.127.0.0.1.nip.io/lab3-twitter-rabbitmqq-2018/
+    
+    A la hora de comprobar si la aplicación funcionaba, se encontró un problema a la hora de conectarse mediante Web Socket en el que no se conseguiá establecer la conexión y nada más abrir la aplicación, fallaba al conectar.
+    
+    ![Screenshot](https://github.com/carlosc568/tmdad-lab4/blob/master/images/error.PNG)
+    
+    Al encontrar este error no se prosiguió a configurar el cluster de rabbitmq para conectarlo con el contenedor creado.
+    
+    ## TODO:
+    * Fix Web Socket problem
+    * Config Local RabbitMQ Cluster
+    
